@@ -1,0 +1,35 @@
+### Basic GET request
+GET http://localhost:8080/
+Accept: text/plain
+
+### GET with query parameter
+GET http://localhost:8080/greet?name=Achyut
+Accept: text/plain
+
+### POST request with body
+POST http://localhost:8080/echo
+Content-Type: text/plain
+
+Day 1 practice, yepp!
+
+### GET with missing route (should 404)
+GET http://localhost:8080/missing
+Accept: text/plain
+
+### POST to sum endpoint (JSON example)
+POST http://localhost:8080/sum
+Content-Type: application/json
+
+{
+  "a": 5,
+  "b": 3
+}
+
+### GET user by ID (path parameter)
+GET http://localhost:8080/users/123
+Accept: application/json
+
+### GET with auth header
+GET http://localhost:8080/auth
+Authorization: Bearer abc123xyz
+Accept: application/json
