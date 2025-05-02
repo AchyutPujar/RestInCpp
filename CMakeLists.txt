@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CPPBIN_DIR /Users/achyutpujar/opt/CppBin)
 
 # Add executable
-add_executable(MyExecutable Day1/day1_server.cpp)
+add_executable(MyExecutable Day2/day2_bookstore.cpp)
 
 target_include_directories(MyExecutable PRIVATE
     ${CPPBIN_DIR}/json/include

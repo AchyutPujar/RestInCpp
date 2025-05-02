@@ -33,3 +33,6 @@ Accept: application/json
 GET http://localhost:8080/auth
 Authorization: Bearer abc123xyz
 Accept: application/json
+
+### Discover Options
+OPTIONS http://localhost:8080

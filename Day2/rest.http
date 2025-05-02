@@ -1,0 +1,2 @@
+### CORS preflight
+OPTIONS http://localhost:8080/
