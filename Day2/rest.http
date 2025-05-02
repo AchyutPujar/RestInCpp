@@ -3,3 +3,9 @@ OPTIONS http://localhost:8080/
 
 ### Get all books
 GET http://localhost:8080/books
+
+### Get single book (Correct)
+GET http://localhost:8080/books/1
+
+### Get single book (Wrong)
+GET http://localhost:8080/books/3

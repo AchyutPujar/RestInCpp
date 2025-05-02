@@ -56,6 +56,21 @@ int main() {
         res.set_content(response.dump(), "application/json");
     });
 
+    // GET single book
+    svr.Get(R"(/books/(\w+))", [](const httplib::Request& req, httplib::Response& res) {
+        set_common_headers(res);
+        std::string id = req.matches[1];
+        nlohmann::json book = find_book(id);
+
+        if (book.is_null()) {
+            res.status = 404;
+            res.set_content(nlohmann::json{{"error", "Book not found"}}.dump(), "application/json");
+            return;
+        }
+
+        res.set_content(book.dump(), "application/json");
+    });
+
     std::cout << "Server running at http://localhost:8080\n";
     svr.listen("localhost", 8080);
 }
