@@ -39,6 +39,23 @@ int main() {
         return httplib::Server::HandlerResponse::Unhandled;
     });
 
+    // GET all books
+    svr.Get("/books", [](const httplib::Request& req, httplib::Response& res) {
+        set_common_headers(res);
+        
+        // Add pagination metadata
+        nlohmann::json response = {
+            {"data", books},
+            {"meta", {
+                {"total", books.size()},
+                {"page", 1},
+                {"per_page", books.size()}
+            }}
+        };
+        
+        res.set_content(response.dump(), "application/json");
+    });
+
     std::cout << "Server running at http://localhost:8080\n";
     svr.listen("localhost", 8080);
 }

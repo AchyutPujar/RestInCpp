@@ -1,2 +1,5 @@
 ### CORS preflight
 OPTIONS http://localhost:8080/
+
+### Get all books
+GET http://localhost:8080/books
